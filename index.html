@@ -28,6 +28,20 @@
   <link rel="stylesheet" type="text/css" href="style.01ebe.css"/>
 </head>
 <body>
+  <script>
+    (function () {
+      var token = new URLSearchParams(location.search).get('fresh');
+      var marker = 'roblock.shareFreshToken';
+      if (!token || localStorage.getItem(marker) === token) return;
+      var staleKeys = [];
+      for (var index = 0; index < localStorage.length; index += 1) {
+        var key = localStorage.key(index);
+        if (key && key.indexOf('roblock.') === 0) staleKeys.push(key);
+      }
+      staleKeys.forEach(function (key) { localStorage.removeItem(key); });
+      localStorage.setItem(marker, token);
+    }());
+  </script>
   <div id="roblock-boot" role="status" aria-live="polite">
     <div class="roblock-boot-card">
       <div class="roblock-boot-logo">ROBLOCK</div>
