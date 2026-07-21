@@ -1,6 +1,8 @@
 html {
   -ms-touch-action: none;
   background: #f5c45e;
+  width: 100%;
+  height: 100%;
 }
 
 body, canvas, div {
@@ -14,10 +16,10 @@ body, canvas, div {
 }
 
 body {
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   padding: 0;
   border: 0;
   margin: 0;
@@ -31,7 +33,14 @@ canvas {
   background-color: transparent;
 }
 
-#GameDiv, #Cocos3dGameContainer, #GameCanvas {
+#GameDiv {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+}
+
+#Cocos3dGameContainer, #GameCanvas {
   width: 100%;
   height: 100%;
 }
