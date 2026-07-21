@@ -1,48 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-
-  <title>Cocos Creator | Roblock</title>
-
-  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <title>ROBLOCK</title>
   <meta name="viewport"
-        content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
-
-  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+        content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover,minimal-ui=true"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-
-  <!-- force webkit on 360 -->
   <meta name="renderer" content="webkit"/>
   <meta name="force-rendering" content="webkit"/>
-  <!-- force edge on IE -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="msapplication-tap-highlight" content="no">
-
-  <!-- force full screen on some browser -->
   <meta name="full-screen" content="yes"/>
   <meta name="x5-fullscreen" content="true"/>
   <meta name="360-fullscreen" content="true"/>
-
-  <!--fix fireball/issues/3568 -->
-  <!--<meta name="browsermode" content="application">-->
   <meta name="x5-page-mode" content="app">
-
-  <!--<link rel="apple-touch-icon" href=".png" />-->
-  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
-
-  <link rel="stylesheet" type="text/css" href="style.02f4a.css"/>
-
+  <style>
+    html,body{width:100%;height:100%;margin:0;background:#f5c45e;overflow:hidden}
+    #roblock-boot{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f8d276 0%,#efaf43 100%);color:#2d203d;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;transition:opacity .22s ease}
+    #roblock-boot.is-hidden{opacity:0;pointer-events:none}
+  </style>
+  <link rel="stylesheet" type="text/css" href="style.f7fbc.css"/>
 </head>
 <body>
-  <div id="GameDiv" cc_exact_fit_screen="true">
-      <div id="Cocos3dGameContainer">
-        <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+  <div id="roblock-boot" role="status" aria-live="polite">
+    <div class="roblock-boot-card">
+      <div class="roblock-boot-logo">ROBLOCK</div>
+      <div class="roblock-boot-blocks" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
       </div>
+      <div class="roblock-boot-copy">正在装配战场…</div>
     </div>
+  </div>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+    <div id="Cocos3dGameContainer">
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+    </div>
+  </div>
   
 
 <!-- Polyfills bundle. -->
@@ -54,10 +50,10 @@
 <script src="src/system.bundle.543e6.js" charset="utf-8"> </script>
 
 <!-- Import map -->
-<script src="src/import-map.932b1.json" type="systemjs-importmap" charset="utf-8"> </script>
+<script src="src/import-map.11ed2.json" type="systemjs-importmap" charset="utf-8"> </script>
 
 <script>
-    System.import('./index.f592f.js').catch(function(err) { console.error(err); })
+    System.import('./index.75cdbcb3.js').catch(function(err) { console.error(err); })
 </script>
 
 </body>
